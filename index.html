@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!--느낌표 + tab 하면 자동완성-->
+<html lang="en">
+
+<!-- rendering : 웹은 태그를 보여주는 일을 하며, 이걸 rendering이라 함 -->
+<head>
+  <meta charset="UTF-8"/> <!--meta : tag(태그), mcharset : attribute(어트리뷰트 = 속성)는 ""(쌍따옴표)로 묶어줘야함, <></> : 리액트에서는 무조건 />로 닫아줘야함. xml 방식이기 때문-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Enginner Course ■■■</title>
+  <!--style 설정방법 2) 따로 태그로 분리하기-->
+  <!-- <style type="text/css">
+    h1 { 
+        background-color: black;
+        color: yellow;
+        text-align: center;
+    }
+  </style> -->
+  
+  <!-- style 설정방법 3) 링크 import 하기 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script는 Head 안에 있거나 body 맨 마지막에 있어야함 -->
+  <script> // script : JS 작성 태그, HTML 문법이 적용되지 않음 (하지만 이 방법은 권장하지 않음, HTML 안에 JS 코드가 있으므로)
+    function init(){
+      alert('Hello, World')
+    }
+  </script>
+</head>
+<body onload="init()"> 
+  <!-- <h1 align="center" style="background-color : red">Hello, Html5</h1> --> 
+  <!-- style 설정방법 1) 인라인 안에 넣기 (style(속성), background-color :(속성의 값) → = "" 로 이어야함)-->
+  <h1>Hello, HTML5</h1>
+  <h2>Hello, HTML5</h2>
+  <h3>Hello, HTML5</h3>
+  <hr color="red" size="5px" width="200" align="left">
+  <h4>Hello, HTML5</h4>
+  <h5>Hello, HTML5</h5>
+  <h6>Hello, HTML5</h6>
+
+  <h1>Frontend Course</h1>
+  <ol> <!--ol : Orderd List의 약자, li : List item의 약자 -->
+    <li><a href="html5.html">HTML5</a></li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>ES6</li>
+    <li>React</li>
+  </ol>
+
+  <pre> <!--작성한 코드 그대로 출력 (단점 : 들여쓰기, 띄어쓰기 등 태그로 지정 불가능)-->
+    public class HelloWorld {
+      public static void main(String[] args) {
+        System.out.println("Hello, World");
+      }
+    }
+  </pre>
+
+  <!-- script는 Head 안에 있거나 body 맨 마지막에 있어야함 -->
+  <script> // script : JS 작성 태그, HTML 문법이 적용되지 않음 (하지만 이 방법은 권장하지 않음, HTML 안에 JS 코드가 있으므로)
+  // <script type="text/jscript"> : 이렇게 작성하면 J스크립트로 읽음, 지정 안하면 JS로 봄
+    function init(){
+      alert('Hello, World')
+    }
+  </script>
+</body>
+</html>
