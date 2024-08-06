@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- cellspacing : 셀과 셀 사이의 간격, cellpadding : 선과 셀 사이의 간격-->
+  <h1>table tag</h1>
+  <!-- table : table을 생성, 정리하는 태그 -->
+  <table align="center" width="600" cellspacing="0" cellpadding="10" border="1"> <!--rules (내부선) : rows 수평선, frame (외곽선) : vsides 양옆, hsides 위 아래--> 
+    <!-- colgroup : 세로 묶음 -->
+    <colgroup>
+      <col span="2" style="background-color: aquamarine;"/>
+      <col style="background-color: darkorchid;"/>
+    </colgroup>
+    <!-- caption : table 안에 위치하여야 하며, caption은 default로 위에 위치한다-->
+    <caption align="bottom">7월, 8월, 9월 수업계획표</caption>
+    <tr style="background-color: yellow;" height="200">
+      <th width="100">수업날짜</th>
+      <th width="250">과목명</th>
+      <th width="250">비고</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td align="center" rowspan="3">7월</td> <!-- rowspan은 아래 행과 병합하는 게 아니라 공간을 갖기 위해 다른 데이터를 밀어냄 -->
+        <td>Core-Java & MySQL</td>
+        <td rowspan="2">JDBC 추가</td>
+      </tr>
+      <tr>
+        <!-- <td align="center">8월</td> -->
+        <td rowspan="2">HTML5, CSS3, JS, React</td>
+        <!-- <td>ES6 추가</td> -->
+      </tr>
+      <tr>
+        <!-- <td align="center">9월</td> -->
+        <!-- <td>Spring & Spring Boot</td> -->
+        <td bgcolor="aqua">MyBatis & JPA 추가</td> <!-- style : css에서,  bgcolor은 옛날에 쓰던 태그-->
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td align="right">합계 :</td>
+        <td align="center" colspan="2">8과목</td>
+        <!-- <td align="center">4과목</td> -->
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
