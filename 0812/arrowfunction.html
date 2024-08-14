@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const name = '한지민';
+    // Declarative/Static Function
+    // 1) 정통 function
+    function myfunc(name) { 
+      return `이름 : ${name}`; 
+    }
+    // 2) function literal, arrow function
+    const myfunc1 = (name) => { 
+      return `이름 : ${name}`; 
+    }
+
+    // 간략하게 만들기
+    // {} (중괄호) : 해야할 일
+    // -> 할 일이 1개이면 괄호 생략 가능
+    const myfunc2 = (name) => `이름 : ${name}`;
+    
+    console.log(myfunc(name));
+    console.log(myfunc1(name));
+    console.log(myfunc2(name));
+
+    
+    const get =  param =>  ({sports: '축구'}); // get : 함수의 시작주소를 갖고 있음 + 중괄호, 리턴 생략됨
+    const result = get; // result : 함수 포인터(arrow 함수의 시작 pointer를 갖고 있음)
+    console.log(result()); // -> result는 함수를 갖고 있기 때문에 () (괄호) 처리
+  
+
+    // 함수 포인터
+    const person = function(name) { // person : 함수 포인터 (객체를 받음)
+      return{
+        getName : function(){ // getName 함수가 갖고 있는 객체를 넘김
+          return name;
+        }
+      }
+    }('Michael');
+
+    console.log(typeof person);
+    console.log(person.getName());
+
+    // 함수를 간략하게 만들기
+    const person1 = (name => {// 실행함수 : 파라미터 ()(괄호) 생략 가능
+      return {
+        getName : function(){
+          return name;
+        }
+      }
+    })('Sujan');
+
+    console.log(typeof person1);
+    console.log(person1.getName());
+  </script>
+</body>
+</html>

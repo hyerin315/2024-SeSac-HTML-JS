@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM</h1>
+  <p>
+    Item Name : <input type="text" id="txtItem" />
+  </p>
+  <hr />
+  <h2>Item List</h2>
+  <ul></ul>
+  <!-- 제일 아래에 스크립트가 위치할 경우, 윈도우 로드 안해주어도 무방 -->
+  <script>
+    // 자바스크립트 없이는 동적으로 움직이지 않음
+    document.querySelector('#txtItem').addEventListener('change', (evt) => {
+      let li = document.createElement('li'); // <li> </li> 동일
+      let text = document.createTextNode(evt.target.value); // 신라면
+      li.appendChild(text); // <li>신라면</li>
+      document.querySelector('ul').appendChild(li);
+      evt.target.value = "";
+  });
+  </script>
+</body>
+</html>
+
+
+
+
+
+#name {
+  text-align-last: right;
+}

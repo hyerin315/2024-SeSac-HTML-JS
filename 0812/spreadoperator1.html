@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const str1 = 'Hello, World';
+    const array = [...str1]; // 펼쳐서 전개함(내부적으로 for...of로 뽑아서 전개함)
+    console.log(array);
+    const array1 = [1,2,3,4,5];
+    console.log(...array1); // 하나하나의 응축된 값을 for..of로 뽑아내어 출력 (갯수상관 X)
+  </script>
+</body>
+</html>

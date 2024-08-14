@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript Loop</h1>
+  <script>
+    // for..of : Java의 강화된 for, 처음부터 끝까지 보기 때문에 배열에서 사용
+    let fruits = ['Apple', 'Strawberry', 'Mango'];
+    for(let a of fruits){
+      console.log(a);
+    }
+
+    // for..in : 객체에서 Key를 뽑아내는 방법, loop를 돌 때 member를 뽑아낼 때 사용
+    const car = { name:'Sonata', price: 300000000, maker:'Hyndai'};
+    for(const key in car){
+      console.log(`${key} ==> ${car[key]}`); // Java의 Map 개념
+      console.log(key); // name, price, maker : car에 있는 멤버들만 뽑아냄
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <p>
+      Favorite Broswer :
+      <select id="browser">
+        <option value="#">--선택--</option>
+        <option value="chrome">Google Chrome</option>
+        <option value="firefox">Mozillar Firefox</option>
+        <option value="safari">Apple Safari</option>
+        <option value="opera">Opera Opera</option>
+        <option value="edge">Microsoft Edge</option>
+      </select>
+    </p>
+    <p>
+      Registration Date : <input type="date" id="regdate" />
+    </p>
+    <p>
+      <textarea id="comment" cols=""40>남기실 말씀이 있나요? </textarea>
+    </p>
+    <button type="button">전송하기</button>
+  </form>
+  <script>
+    document.querySelector('button').addEventListener('click', () => {
+      let browser = document.querySelector('#browser');
+
+      // selectedInex : 공간을 줄일 때 사용, 몇번째를 선택했는지 뽑을 수 있음 
+      // options : option 중에 어떤 걸 선택했는지 뽑을 수 있음
+      browser = browser.options[browser.selectedIndex].value;
+      let regdate = document.querySelector('#regdate').value;
+      let comment = document.querySelector('#comment').value;
+      let result = `귀하가 좋아하시는 브라우저 : ${browser}\n귀하가 예약한 날짜 : ${regdate}\n귀하가 남기신 말씀 : ${comment}`; // `` (템플릿 리터럴) : 홑따옴표가 열린 후 닫힐 때까지가 한 문장
+      console.log(result)
+    });
+  </script>
+</body>
+</html>

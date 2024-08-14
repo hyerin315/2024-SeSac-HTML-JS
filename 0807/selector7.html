@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* ul 아래 모든 바로 아래 자식들(손자 X, 증손자 X)에게 적용 */
+    ul>li {
+      color:  red;
+    }
+    ul>li {
+      color:  #F00;
+    }
+    ul>li {
+      color:  #FF0000;
+    }
+    ul>li {
+      color:  rgb(255, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <h1>Coure Subject</h1>
+  <ul>
+    <li>Core-Java</li>
+    <li>MySQL</li>
+    <li>Front-ent</li>
+    <!-- ol도 ul의 자식이기 때문에 적용됨 -->
+    <ol> 
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+    </ol>
+    <li>Spring</li>
+  </ul>
+</body>
+</html>

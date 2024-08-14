@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript Function</h1>
+  <script>
+    // hoiting : function 또한 hoisting(끌어올리기) 되어 위에서 호출해도 됨  
+    
+    // 1. Declarative / Static Function
+    function calc(a, b) {
+      return a * b;
+    }
+
+    console.log(calc(4, 3));
+
+
+    // 2. Dynamic / Anonymous Function
+    const clac = new Function('a', 'b', "return a * b"); // 왼쪽이 파라미터, 오른쪽 return 부분이 body
+    const aaa = calc; //JS에서는 이 방법도 가능 (calc 주소가 복사되어 같은 함수를 바라봄, 그렇기에 Anonymous function라고 함)
+    console.log(calc(4, 4));
+
+
+    // 3. function Literal
+    const calc2 = function(a, b){return a * b}; // body를 중괄호 안에 작성 
+    console.log(calc2(4, 5));
+
+    // 화살표 함수
+    const calc3 = (a, b) => { return a * b };
+    console.log(calc(4, 5));
+    const bbb = clac; // 함수 시작주소에 괄호를 붙이면 함수를 호출함
+    console.log(bbb(4, 5));
+
+
+    // 리액트에서 쓸 때
+    // const Ccc = () => {
+    //   return <div>Hello</div> // 컴포넌트
+    // }
+
+    // 리액트에서 쓸 때
+    // <Ccc />
+
+  </script>
+</body>
+</html>

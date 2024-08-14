@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /* 형제 결합자 : id=a를 기준 다음으로 형제 관계에 있는 아래의 것들만 적용 */
+  #a~li {
+    color: red;
+  }
+  /* 인접 형제 선택자 : id=a를 기준으로 가까운 형제관계에 있는 아래에 것만 적용 */
+  #a+li {
+    background-color: black;
+  }
+  </style>
+</head>
+<body>
+  <h1>성공하는 사람들의 7가지 습관</h1>
+  <ul>
+    <li>자신의 삶을 주도하라</li>
+    <li>끝을 생각하며 주도하라</li>
+    <li id="a">소중한 것을 먼저하라</li>
+    <li>윈윈을 생각하라</li>
+    <li>먼저 이해하고 그 다음에 이해시켜라</li>
+    <li>시너지를 내라</li>
+    <li>끊임없이 쇄신하라</li>
+  </ul>
+</body>
+</html>

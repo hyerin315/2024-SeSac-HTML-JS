@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      background: #000;
+      color: white;
+    }
+    #a {
+      color: white;
+    }
+    /* 속성은 다 대괄호 */
+    /* 속성 전체 적용 */
+    a[href] {
+      color: red;
+    }
+    /* 속성이 일치할 때 적용 */
+    a[href="https://www.naver.com:443"] {
+      color: blue;
+    }
+    /* 속성의 시작 글자가 일치할 때 적용 */
+    a[href^="ftp"] {
+      color: green;
+    }
+    /* 속성의 끝 글자가 일치할 때 적용 */
+    a[href$="443"] {
+      color: violet;
+    }
+    /* 속성에 특정 단어가 포함되어 있을 때 적용 */
+    a[href*="naver"] {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="a">Search Engine</h1>
+  <ul>
+    <li><a href="https://www.naver.com:443">Naver</a></li>
+    <li><a href="ftp://www.google.com:21">Google</a></li>
+    <li><a href="https://www.nate.com">Nate</a></li>
+    <li><a name="daum">Daum</a></li>
+  </ul>
+</body>
+</html>

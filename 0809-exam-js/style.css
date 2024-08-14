@@ -1,0 +1,72 @@
+#calc {
+  width: 800px;
+  border: 1 solid goldenrod;
+}
+
+#calc legend {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#name {
+  text-align-last: right;
+}
+
+#info {
+  color: gray;
+  font-style: ;
+}
+
+#result {
+  color: gray;
+}
+
+.fieldset-container {
+  display: flex; 
+  justify-content: space-between; 
+  gap: 20px; 
+}
+
+.wrong {
+  background-color: red;
+}
+
+fieldset {
+  flex: 1;
+  width: 500px;
+  border: 1px solid goldenrod;
+  padding: 10px;
+}
+
+input {
+  width: 50px;
+  border-radius: 3;
+}
+
+ol {
+  list-style-position: inside; 
+  padding-left: 0; 
+}
+
+ol li {
+  justify-content: space-between;
+  align-items: center; 
+  padding-left: 0; 
+  margin-bottom: 5px; 
+}
+
+li input {
+  margin-left: 10px; 
+}
+
+.red-text {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* 버튼 중앙 정렬 */
+  margin-top: 20px; /* 버튼과 다른 요소 사이의 여백 설정 */
+}

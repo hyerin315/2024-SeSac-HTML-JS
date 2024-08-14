@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript Primitive Type</h1>
+  <script>
+    // 변수
+    // 1. 스트링 변수를 만들면 스프링 객체의 메소드에 접근가능
+    // 2. 숫자형 변수를 만들면 숫자형 객체의 메소드에 접근가능
+    // => Boxing 개념 : JS에서는 프리미티브 타입이 메소드 호출시, 임시로 프리미티브 값을 객체로 변환하여 메소드를 사용할 수 있게 함
+    let name = 'Michel';
+    document.write(`Your name is ${name}.`); // ``(백틱) : 문장에 걸쳐 $로 변수를 선언할 수 있게 해줌 -> Templet riteral (문자열을 작성할 때 여러 줄을 포함하거나, 문자열 내에 표현식을 포함할 수 있게 해주는 기능)
+    name = name.toUpperCase(); // 프리미티브 타입임에도 String 안의 메소드를 쓸 수 있음 (값변수라 할지라도 변수에 접근이 가능하다)
+    document.write(`<br />` + `Your name is ${name}.`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ol { list-style-type: none; }
+    ol > li { display: inline; }
+  </style>
+</head>
+<body>
+  <h1>Prevent Default Event</h1>
+  <ol>
+    <!-- Dom Level 0-->
+    <!-- return false : 이벤트를 막는 방법-->
+    <!-- <li><a href="apple.html" id="apple" onclick="aaa(); return false;">Apple  |</a></li> -->
+
+    <!-- href="#" : 특정 페이지를 보이지 않게 하는 방법 -->
+    <li><a href="#" id="apple">Apple  |</a></li> 
+    <li><a href="#" id="melon">Melone |</a></li>
+    <li><a href="#" id="mango">Mango  |</a></li>
+  </ol>
+  <hr />
+  <div id="result"><img src="" alt="" id="myImg"></div>
+  <script>
+    const alinks = document.getElementsByTagName('a');
+    
+    // for 반복문
+    for(let i = 0; i < alinks.length; i++){
+      alinks[i].addEventListener('click', myClick, false);
+    }
+
+    function myClick(evt) {
+      //console.log(evt.target.id);
+      evt.preventDefault(); // evt가 가진 link 이벤트를 사라지게 하는 방법
+      const img = document.getElementById('myImg');
+      // switch 반복문
+      switch(evt.target.id) {
+        case "apple": img.setAttribute('src', 'img/apple.jpg'); break; // attribute : 이미지 태그의 속성
+        case "mango": img.setAttribute('src', 'img/mango.jpg'); break;
+        case "melon": img.setAttribute('src', 'img/melon.jpg'); break;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript's Module</h1> 
+  <!-- Moduel : 재사용성이 높음(Java 입장에서는 컴포넌트) -->
+  <!-- JS에서는 module 또한 js 확장자로 생성함 -->
+  <script src="js/a.js"></script>
+  <script src="js/b.js"></script>
+  <script>
+    //ES5
+    console.log(getTotal()); //200 (b.js가 늦게 로딩되기 때문에)
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+h1 { 
+  color: red; 
+  font-family: 궁서;
+  width: 300px;
+  background-color: yellow;
+
+  /* 가운데 오게 설정 : table이나 form은 아래 설정으로 가운데에 둘 수 있음 */
+  margin-left: auto;
+  margin-right: auto;
+}

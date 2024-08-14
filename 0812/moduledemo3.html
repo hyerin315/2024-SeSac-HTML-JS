@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script type="module" src="./js/app.js"></script> -->
+  <script type="module">
+    import { add } from './js/example.js'; // 확장자 생략시, Error : React나 Vue는 node 엔진을 통해 돌아감, 하지만 현재 JS는 순수 엔진에 돌아가고 있음. 그렇기에 확장자가 없으면 안됨
+    console.log(add(4, 9));
+    //add = 1; // constatnt
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Destructuring</h1>
+  <script>
+    const student = {
+      name: '한지민',
+      age: 28,
+      address: '서울시 영등포구 선유로9길 30'
+    };
+
+    const {name, age, address} = student;
+    console.log(`name = ${name}, age = ${age}, adress = ${address}`); // 해체
+
+    const array = [1, 2, 3, 4, 5];
+    const [a, ...b] = array;
+    const [,, ...c] = array;
+    console.log(a, b, c); // a = 1, b = [2,3,4,5], c = [3,4,5]
+
+
+    // Defualt Parameter와 연동하기
+    // Parameter : undefined가 기본값
+    const [a1 = 10, b1 = 20] = [undefined, 5];
+    console.log(a1, b1); // 10  5
+
+    const[c1, d1 = c1 * 2] = [5];
+    console.log(c1, d1); 
+
+
+    // Swapping (바꿔치기)
+    //ES5
+    var a2 = 10; 
+    var b2 = 2;
+    var c2 = b2; b2 = a2; a2 = c2; // 바꿔치기 위해 다른 변수를 통해 담아두고 바꿔치기 -> 이럴 경우 변수가 하나 더 필요하다는 단점
+    console.log(a2, b2);
+
+    //ES6
+    let a3 = 10;
+    let b3 = 20;
+    [a3, b3] = [b3, a3];
+    console.log(a3, b3);
+
+
+    // Parameter로 객체 Destructuring
+    // 1) Destructuring을 배열이나 객체로 전달하고자 할 때
+    //   반드시, 배열은 배열로, 객체는 객체로 전달받아야함
+    // 2) 객체의 해체 기준은 key 기준임, 배열은 index 기준임
+    function func([a4, b4, c4 = a4 + b4]) { //배열이 파라미터로 넘어올떄
+      console.log(a4, b4, c4);  // 100  200  300 
+    }
+    func([100, 200]);
+
+    function func({a, b, c = a + b}){ //객체가 파라미터로 넘어올 때
+      console.log(a, b, c);
+    }
+    func({a: 100, b:200})
+
+
+    const {x, ...rest} = {x: 1, y: 2, z: 3}; // 1과 나머지는 객체
+    console.log(x);
+    console.log(rest);
+
+
+
+    //원래 출력하려면 아래 방법
+    const user = {
+      firstName : '한',
+      lastName : '지민'
+    }
+    console.log(user.firstName, user.lastName);
+
+    //Destructure 사용
+    const { firstName, lastName } = user;
+    console.log(firstName, lastName);
+
+
+    const student2 = {
+      name: '한지민',
+      address: {
+        zipcode: '12345',
+        city: 'Seoul'
+      }
+    }
+    const { address: { city }} = student2;
+    console.log(city); // key의 값만 넘어옴
+
+
+    //ES5
+    const printUser = (user) => {
+      console.log(user.name);
+    }
+    printUser({id: 'jimin', name: '한지민'}); // user로 객체를 받음
+    
+    //ES6 : name만 찍고 싶을 때
+    const printUser2 = ({name}) => {
+      console.log(name);
+    }
+    printUser2({id: 'jimin', name: '한지민'});
+  </script>
+</body>
+</html>

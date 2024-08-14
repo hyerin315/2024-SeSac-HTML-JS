@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript Object</h1>
+  <p>
+    <!-- this : this는 쓰는 방법에 따라 다르며, function 안에 쓸 경우 자기 자신을 가리킴 -->
+    <!-- 아래의 경우에, this는 button 객체를 반환 -->
+    <button type="button" onClick="bgChange(this)">Red</button>&nbsp;&nbsp; 
+    <button type="button" onClick="bgChange(this)">Blue</button>
+  </p>
+  <script>
+    // JS의 Class란 개념을 사용할 때
+    function bgChange(event){
+      console.log(event.innerHTML); // innerHTML : 태그와 태그 사이의 글씨를 출력
+      document.body.style.backgroundColor = event.innerHTML.toLowerCase(); // toLowerCase : 글자를 소문자로
+    };
+
+    const car = { name:'Sonata'}; // 자동차의 주소는 바뀌지 않음 : 내부는 바꿀 수 있음
+    console.log(car.name);
+    car.price =  3000000;
+    console.log(car.price); // 자동차에 만들어져 있는 memeber가 아니지만, 출력할 때 없으면 저절로 만들어짐
+
+
+    // JS가 class란 개념이 없었을 때 (Java와 비슷하게 만드는 방법)
+    let Student = function(n, ko, en, mt) {
+      let name = n; // let : private 역할을 함
+      let kor = ko;
+      let eng = en;
+      let mat = mt;
+
+      // Getter
+      this.getName = function() { return name; } // this : public 역할을 함
+      // Setter
+      this.setName = function(n) { name = n; }
+    }
+
+
+    // 사용자 정의형 객체 chulsu 생성
+    let chulsu =  new Student('김철수', 78, 90, 100); 
+
+    console.log(chulsu.kor); // let : private 역할을 하기 때문에 이렇게 출력하기 위해서는 Getter/Setter이 필요함김
+    console.log(chulsu.getName()); // this : public 역할을 하기 때문에 밖에서는 getName을 통해 호출해야함
+    chulsu.setName('이영희'); // 이영희로 이름 변경
+    console.log(chulsu.getName()); // 이영희로 변경되어 출력
+
+    // Java와 JS의 차이점
+    // Java는 console을 통해 입력 받지만, JS는 텍스트 박스를 통해 입력받음
+    // prompt 입력 받아 생성
+    let name = window.prompt("이름 : ") //String으로 들어옴
+    let kor = window.prompt("국어 : ") //String으로 들어옴
+    let eng = window.prompt("영어 : ") //String으로 들어옴
+    let mat = window.prompt("수학 : ") //String으로 들어옴
+  
+    let person = new Student(name, parseInt(kor), parseInt(eng), parseInt(mat));
+
+    console.log(person.getName());
+    person.setName('김영희');
+    console.log(person.getName());
+
+
+    // 날짜 출력 (1970년 에폭타임으로부터 흐른 총 ms - ms으로 +- 계산 가능, 0월부터 시작함)
+    let now = new Date(2024, 7, 8, 12, 0, 0); // 2024 8 8 12:00:00 파라미터를 넣으면 그 날짜 시간이 뜸(0월부터 시작하므로 8월)
+    console.log(now.toLocaleString()); 
+
+
+    // 비교 연산자
+    // == : 값만 비교
+    // === : 자료형까지 비교
+    if(3 == "3") {
+      console.log('같다.'); // == 으로 하면 같다
+    } else {
+      console.log('다르다.'); // === 으로 하면 다르다
+    }
+
+
+    // 배열
+    let arrays = [4, 7, 1, 2, 3, 8, 0];
+    arrays.sort(mycompare); // 내림차순
+    function mycompare(a, b) {
+      return b - a;
+    }
+    console.log(arrays); // [8,7,4,3,2,1,0]
+
+    arrays.sort((a, b) => {b - a}); // java의 lamda처럼 사용
+    console.log(arrays); // [8,7,4,3,2,1,0] 
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Inner Function & Closure</h1>
+  <script>
+    // Inner function
+    function outer(greeting) {
+      function inner(whom) {
+        console.log(greeting + ',' + whom) // inner function을 : 바깥의 greeting을 사용 할 수 있음
+      }
+      inner('jimin');
+      //console.log(whom); //바깥에서는 inner function에 접근할 수 없음
+    }
+
+    outer('Hello');
+    //inner('culsu'); // 바깥에서는 inner function을 접근할 수 없음
+
+
+    // Closer
+    function outer2(greeting) {
+      //return greeting +  'jimin'; // string literal
+      //return 5; // number literal
+      //return false; // boolean literal
+      //return ['Mango', 'Apple']; // array literal
+      //return { name : 'Sonata', price:3000000 }; // object literal
+      //return function inner2() { console.log('Hello, World');} // Closure : function을 return하는 것
+      return function inner3(whom) { console.log(greeting + ',' + whom); } // inner function은 outer function의 파라미터, 어규먼트, 변수 등을 사용 할 수 있음
+    }
+
+    const result = outer2('Hello');
+    console.log(result); // result는 함수 내부에 있는 다양한 return 값을 return 유형에 맞게 반환함
+    //result(); // function을 반환
+    result('jimin');
+    result('chulsu');
+    const eval = outer2('Good morning');
+    eval('jimin');
+  </script>
+</body>
+</html>

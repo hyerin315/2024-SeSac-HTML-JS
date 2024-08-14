@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Conversion</h1>
+  <p>
+    <label>Age : </label>
+    <input type="text" placeholder="Enter your age..." id="userage">
+    <button type="button" onClick="myClick()">Click Me!</button>
+  </p>
+  <!-- sript는 html이 메모리에 올라온 후 처리되어야함으로 맨 아래 위치 -->
+  <script>
+    // 숫자 형변환 방법
+    // 1. number 사용
+    // 2. parseInt 사용
+    //    -> parseInt의 장점 : 1) 숫자만 뽑아내는 게 가능함  2) 진법 변환이 가능함
+    function myClick() {
+      let age = document.getElementsById('userage').value;
+      // age = Number(age);
+      age = parseInt(age); 
+      document.write(`당신의 나이는 ${age + 10}살이군요.`);
+    }
+  </script>
+</body>
+</html>

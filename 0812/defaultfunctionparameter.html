@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Default Function Parameter</h1>
+  <script>
+    // 1) JavaSrcipt에서는 함수의 매개변수의 기본값은 undefined임
+    // 2) ES6의 Default Function Parameter를 사용하면 매개변수에 값을 전달하지 않았을 때 undefined로 처리되지 않고, 기본값으로 처리함
+    // 3) Syntax
+    //    function 함수이름(param1 = defaultValue1, [,...]){}
+
+    //ES5
+    function add(x, y) {
+      //console.log(x, y);
+      return x + y;
+    }
+    console.log(add(1)); //  값이 제대로 안들어왔을 때, undefined로 인해 NaN(Not a Number)가 됨
+
+    // or 단락평가로 문제 해결
+    function add1(x, y) {
+      x = x || 0; // x가 참이므로 오른쪽은 안해도 됨
+      y = y || 0; // y는 거짓이므로 오른쪽을 하게 됨 -> 0 삽입
+      console.log(x, y);
+      return x + y;
+    }
+    console.log(add1(1)); //1  0  =>  1
+    console.log(add1(1, null)); // 1  0  =>  1
+    console.log(add1(1, undefined)); // 1  0  =>  1
+    console.log(add1(1, 2)); // 1  2  =>  3
+
+
+    //ES6
+    function add2(x = 0, y = 0){ 
+      console.log(x, y);
+    }
+
+    console.log(add2(1)); //1  0  =>  1
+    console.log(add2(1, null)); // 1  null
+    console.log(add2(1, undefined)); // 1  0 
+    console.log(add2(1, 2)); // 1  2
+
+    
+    // 4) Rest Parameter는 매개변수 기본값을 지정할 수 없음
+    function add3(...args){
+      console.log(args);
+    }
+
+    add3(1);
+    add3(1, undefined);
+    add3(1, 2);
+  </script>
+</body>
+</html>
